@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-# https://127.0.0.1:5000/search
+# https://example.com/search
 @app.route('/') # registering a route to our flask app
 def index():
     return render_template("index.html")
@@ -25,7 +25,7 @@ def register():
 
 @app.route("/registered")
 def registered():
-    return "registered successfully. <a href='http://127.0.0.1:5000/'>Click Here</a>"
+    return f"registered successfully. <a href='{request.host_url}'>Click Here</a>"
 
 if __name__ == "__main__":
     app.run(debug=True)
