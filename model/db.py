@@ -7,7 +7,7 @@ def connect():
     return conn, cur
 
 def init_db():
-    with open(r"E:\ben\ben_classes\model\tables.sql", "r") as sql:
+    with open(r"./model/tables.sql", "r") as sql:
         conn, cur = connect()
         for query in sql.readlines():
             cur.execute(query) # execute the query
